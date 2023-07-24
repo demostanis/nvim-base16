@@ -69,12 +69,14 @@ M.highlight = setmetatable({}, {
             return
         end
 
-        local guifg, guibg, gui, guisp = args.guifg or nil, args.guibg or nil, args.gui or nil, args.guisp or nil
+        local guifg, guibg, gui, guisp, italic, bold = args.guifg or nil, args.guibg or nil, args.gui or nil, args.guisp or nil, args.italic or nil, args.bold or nil
         local cmd = { 'hi', hlgroup }
         if guifg then table.insert(cmd, 'guifg=' .. guifg) end
         if guibg then table.insert(cmd, 'guibg=' .. guibg) end
         if gui then table.insert(cmd, 'gui=' .. gui) end
         if guisp then table.insert(cmd, 'guisp=' .. guisp) end
+        if italic then table.insert(cmd, 'gui=italic') end
+        if bold then table.insert(cmd, 'gui=bold') end
         vim.cmd(table.concat(cmd, ' '))
     end
 })
@@ -178,13 +180,13 @@ function M.setup(colors, config)
     -- Standard syntax highlighting
     hi.Boolean                            = { guifg = M.colors.base09, guibg = nil, gui = nil, guisp = nil }
     hi.Character                          = { guifg = M.colors.base08, guibg = nil, gui = nil, guisp = nil }
-    hi.Comment                            = { guifg = M.colors.base03, guibg = nil, gui = nil, guisp = nil }
+    hi.Comment                            = { guifg = M.colors.base0B, guibg = nil, gui = nil, guisp = nil, italic = true }
     hi.Conditional                        = { guifg = M.colors.base0E, guibg = nil, gui = nil, guisp = nil }
     hi.Constant                           = { guifg = M.colors.base09, guibg = nil, gui = nil, guisp = nil }
     hi.Define                             = { guifg = M.colors.base0E, guibg = nil, gui = 'none', guisp = nil }
     hi.Delimiter                          = { guifg = M.colors.base0F, guibg = nil, gui = nil, guisp = nil }
     hi.Float                              = { guifg = M.colors.base09, guibg = nil, gui = nil, guisp = nil }
-    hi.Function                           = { guifg = M.colors.base0D, guibg = nil, gui = nil, guisp = nil }
+    hi.Function                           = { guifg = M.colors.base0D, guibg = nil, gui = nil, guisp = nil, bold = true }
     hi.Identifier                         = { guifg = M.colors.base08, guibg = nil, gui = 'none', guisp = nil }
     hi.Include                            = { guifg = M.colors.base0D, guibg = nil, gui = nil, guisp = nil }
     hi.Keyword                            = { guifg = M.colors.base0E, guibg = nil, gui = nil, guisp = nil }
@@ -218,7 +220,7 @@ function M.setup(colors, config)
     -- Git highlighting
     hi.gitcommitOverflow                  = { guifg = M.colors.base08, guibg = nil, gui = nil, guisp = nil }
     hi.gitcommitSummary                   = { guifg = M.colors.base0B, guibg = nil, gui = nil, guisp = nil }
-    hi.gitcommitComment                   = { guifg = M.colors.base03, guibg = nil, gui = nil, guisp = nil }
+    hi.gitcommitComment                   = { guifg = M.colors.base0B, guibg = nil, gui = nil, guisp = nil, italic = true }
     hi.gitcommitUntracked                 = { guifg = M.colors.base03, guibg = nil, gui = nil, guisp = nil }
     hi.gitcommitDiscarded                 = { guifg = M.colors.base03, guibg = nil, gui = nil, guisp = nil }
     hi.gitcommitSelected                  = { guifg = M.colors.base03, guibg = nil, gui = nil, guisp = nil }
@@ -280,7 +282,7 @@ function M.setup(colors, config)
     hi.TSException                        = { guifg = M.colors.base08, guibg = nil, gui = 'none', guisp = nil }
     hi.TSField                            = { guifg = M.colors.base05, guibg = nil, gui = 'none', guisp = nil }
     hi.TSFloat                            = { guifg = M.colors.base09, guibg = nil, gui = 'none', guisp = nil }
-    hi.TSFunction                         = { guifg = M.colors.base0D, guibg = nil, gui = 'none', guisp = nil }
+    hi.TSFunction                         = { guifg = M.colors.base0D, guibg = nil, gui = 'none', guisp = nil, bold = true }
     hi.TSFuncBuiltin                      = { guifg = M.colors.base0D, guibg = nil, gui = 'italic', guisp = nil }
     hi.TSFuncMacro                        = { guifg = M.colors.base08, guibg = nil, gui = 'none', guisp = nil }
     hi.TSInclude                          = { guifg = M.colors.base0D, guibg = nil, gui = 'none', guisp = nil }
