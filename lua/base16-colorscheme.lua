@@ -155,7 +155,7 @@ function M.setup(colors, config)
     hi.VisualNOS                          = { guifg = M.colors.base08, guibg = nil, gui = nil, guisp = nil }
     hi.WarningMsg                         = { guifg = M.colors.base08, guibg = nil, gui = nil, guisp = nil }
     hi.WildMenu                           = { guifg = M.colors.base08, guibg = M.colors.base0A, gui = nil, guisp = nil }
-    hi.Title                              = { guifg = M.colors.base0D, guibg = nil, gui = 'none', guisp = nil }
+    hi.Title                              = { guifg = M.colors.base0F, guibg = nil, gui = 'none', guisp = nil, bold = true }
     hi.Conceal                            = { guifg = M.colors.base0D, guibg = M.colors.base00, gui = nil, guisp = nil }
     hi.Cursor                             = { guifg = M.colors.base00, guibg = M.colors.base05, gui = nil, guisp = nil }
     hi.NonText                            = { guifg = M.colors.base03, guibg = nil, gui = nil, guisp = nil }
@@ -165,7 +165,7 @@ function M.setup(colors, config)
     hi.StatusLineNC                       = { guifg = M.colors.base04, guibg = M.colors.base01, gui = 'none', guisp = nil }
     hi.WinBar                             = { guifg = M.colors.base05, guibg = nil, gui = 'none', guisp = nil }
     hi.WinBarNC                           = { guifg = M.colors.base04, guibg = nil, gui = 'none', guisp = nil }
-    hi.VertSplit                          = { guifg = M.colors.base05, guibg = M.colors.base00, gui = 'none', guisp = nil }
+    hi.VertSplit                          = { guifg = M.colors.base02, guibg = M.colors.base00, gui = 'none', guisp = nil }
     hi.ColorColumn                        = { guifg = nil, guibg = M.colors.base01, gui = 'none', guisp = nil }
     hi.CursorColumn                       = { guifg = nil, guibg = M.colors.base01, gui = 'none', guisp = nil }
     hi.CursorLine                         = { guifg = nil, guibg = M.colors.base01, gui = 'none', guisp = nil }
@@ -173,9 +173,14 @@ function M.setup(colors, config)
     hi.QuickFixLine                       = { guifg = nil, guibg = M.colors.base01, gui = 'none', guisp = nil }
     hi.PMenu                              = { guifg = M.colors.base05, guibg = M.colors.base01, gui = 'none', guisp = nil }
     hi.PMenuSel                           = { guifg = M.colors.base01, guibg = M.colors.base05, gui = nil, guisp = nil }
-    hi.TabLine                            = { guifg = M.colors.base03, guibg = M.colors.base01, gui = 'none', guisp = nil }
+    hi.TabLine                            = { guifg = M.colors.base05, guibg = M.colors.base02, gui = 'none', guisp = nil }
     hi.TabLineFill                        = { guifg = M.colors.base03, guibg = M.colors.base01, gui = 'none', guisp = nil }
-    hi.TabLineSel                         = { guifg = M.colors.base0B, guibg = M.colors.base01, gui = 'none', guisp = nil }
+    hi.TabLineSel                         = { guifg = M.colors.base05, guibg = M.colors.base0A, gui = 'none', guisp = nil }
+
+    hi.manSectionHeading                  = { guifg = M.colors.base05, gui = 'none', guisp = nil }
+
+    hi.NvimTreeOpenedFolderName           = { guifg = M.colors.base08 }
+    hi.NvimTreeFolderName                 = { guifg = M.colors.base08 }
 
     -- Standard syntax highlighting
     hi.Boolean                            = { guifg = M.colors.base09, guibg = nil, gui = nil, guisp = nil }
