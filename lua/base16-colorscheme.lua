@@ -180,6 +180,7 @@ function M.setup(colors, config)
     hi.manSectionHeading                  = { guifg = M.colors.base05, gui = 'none', guisp = nil }
 
     hi.NvimTreeOpenedFolderName           = { guifg = M.colors.base08 }
+    hi.NvimTreeSymlink                    = { guifg = M.colors.base08 }
     hi.NvimTreeFolderName                 = { guifg = M.colors.base08 }
 
     -- Standard syntax highlighting
